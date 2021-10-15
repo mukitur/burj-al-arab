@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import useFirebase from '../../hooks/useFirebase';
 
 
 const Login = () => {
+    const {signInWithGoogle} = useFirebase();
     return (
-        <div>
-            <h1>This is Login</h1>
+        <div className="App my-5">
+            <h1 className="mb-3">Please Login</h1>
+            <Button onClick ={signInWithGoogle} variant="secondary">Google Login</Button>
         </div>
     );
 };
